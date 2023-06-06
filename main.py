@@ -1,3 +1,4 @@
+import pandas as pd
 import Insan
 import Issiz
 import Calisan
@@ -36,3 +37,21 @@ beyazyaka2 = BeyazYaka.BeyazYaka(30440751231, "Sinem", "Kobal", 35, "Kadın", "T
 print(beyazyaka2.__str__())
 beyazyaka3 = BeyazYaka.BeyazYaka(81924007632, "Murat", "Boz", 43, "Erkek", "Turkiye", 56, 24500, "insaat", 1500)
 print(beyazyaka3.__str__())
+
+veriler = {"Kategori": ["Calisan", "Calisan", "Calisan", "Mavi yaka", "Mavi yaka", "Mavi yaka", "Beyaz yaka", "Beyaz yaka", "Beyaz yaka"],
+        "Tc_no": [calisan1.get_tc_no(), calisan2.get_tc_no(), calisan3.get_tc_no(), maviyaka1.get_tc_no(), maviyaka2.get_tc_no(), maviyaka3.get_tc_no(), beyazyaka1.get_tc_no(), beyazyaka2.get_tc_no(), beyazyaka3.get_tc_no()],
+        "Ad": [calisan1.get_ad(), calisan2.get_ad(), calisan3.get_ad(), maviyaka1.get_ad(), maviyaka2.get_ad(), maviyaka3.get_ad(), beyazyaka1.get_ad(), beyazyaka2.get_ad(), beyazyaka3.get_ad()],
+        "Soyad": [calisan1.get_soyad(), calisan2.get_soyad(), calisan3.get_soyad(), maviyaka1.get_soyad(), maviyaka2.get_soyad(), maviyaka3.get_soyad(), beyazyaka1.get_soyad(), beyazyaka2.get_soyad(), beyazyaka3.get_soyad()],
+        "Yas": [calisan1.get_yas(), calisan2.get_yas(), calisan3.get_yas(), maviyaka1.get_yas(), maviyaka2.get_yas(), maviyaka3.get_yas(), beyazyaka1.get_yas(), beyazyaka2.get_yas(), beyazyaka3.get_yas()],
+        "Cinsiyet": [calisan1.get_cinsiyet(), calisan2.get_cinsiyet(), calisan3.get_cinsiyet(), maviyaka1.get_cinsiyet(), maviyaka2.get_cinsiyet(), maviyaka3.get_cinsiyet(), beyazyaka1.get_cinsiyet(), beyazyaka2.get_cinsiyet(), beyazyaka3.get_cinsiyet()],
+        "Uyruk": [calisan1.get_uyruk(), calisan2.get_uyruk(), calisan3.get_uyruk(), maviyaka1.get_uyruk(), maviyaka2.get_uyruk(), maviyaka3.get_uyruk(), beyazyaka1.get_uyruk(), beyazyaka2.get_uyruk(), beyazyaka3.get_uyruk()],
+        "Sektor": [calisan1.get_sektor(), calisan2.get_sektor(), calisan3.get_sektor(), maviyaka1.get_sektor(), maviyaka2.get_sektor(), maviyaka3.get_sektor(), beyazyaka1.get_sektor(), beyazyaka2.get_sektor(), beyazyaka3.get_sektor()],
+        "Tecrube": [calisan1.get_tecrube()//12, calisan2.get_tecrube()//12, calisan3.get_tecrube()//12, maviyaka1.get_tecrube()//12, maviyaka2.get_tecrube()//12, maviyaka3.get_tecrube()//12, beyazyaka1.get_tecrube()//12, beyazyaka2.get_tecrube()//12, beyazyaka3.get_tecrube()//12],
+        "Maas": [calisan1.get_maas(), calisan2.get_maas(), calisan3.get_maas(), maviyaka1.get_maas(), maviyaka2.get_maas(), maviyaka3.get_maas(), beyazyaka1.get_maas(), beyazyaka2.get_maas(), beyazyaka3.get_maas()],
+        "Yipranma payi": [0, 0, 0, maviyaka1.get_yipranma_payi(), maviyaka2.get_yipranma_payi(), maviyaka3.get_yipranma_payi(), 0, 0, 0],
+        "Tesvik primi": [0, 0, 0, 0, 0, 0, beyazyaka1.get_tesvik_primi(), beyazyaka2.get_tesvik_primi(), beyazyaka3.get_tesvik_primi()],
+        "Yeni maas": [calisan1.get_maas(), calisan2.get_maas(), calisan3.get_maas(), maviyaka1.get_maas(), maviyaka2.get_maas(), maviyaka3.get_maas(), beyazyaka1.get_maas(), beyazyaka2.get_maas(), beyazyaka3.get_maas()]
+        }
+
+df = pd.DataFrame(veriler)
+print(df.to_string())
