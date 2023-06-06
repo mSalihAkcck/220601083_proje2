@@ -54,4 +54,7 @@ veriler = {"Kategori": ["Calisan", "Calisan", "Calisan", "Mavi yaka", "Mavi yaka
         }
 
 df = pd.DataFrame(veriler)
-print(df.to_string())
+print(df.to_string(), "\n")
+
+grup = df.groupby(["Kategori"]).agg({"Yeni maas": "mean", "Tecrube": "mean"})
+print(grup, "\n")             # kategoriye göre gruplandırılmıs yeni maas ve tecrubenin ortalaması
