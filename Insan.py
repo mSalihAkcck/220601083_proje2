@@ -26,4 +26,4 @@ class Insan:
                f"Soyad: {self.get_soyad()}\n" \
                f"Yaş: {self.get_yas()}\n" \
                f"Cinsyet: {self.get_cinsiyet()}\n" \
-               f"Uyruk: {self.get_uyruk()}"
+               f"Uyruk: {self.get_uyruk()}\n"
