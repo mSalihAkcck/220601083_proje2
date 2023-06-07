@@ -1,4 +1,5 @@
 class Insan:
+
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk):
         self.__tc_no = tc_no
         self.__ad = ad
@@ -6,6 +7,8 @@ class Insan:
         self.__yas = yas
         self.__cinsiyet = cinsiyet
         self.__uyruk = uyruk
+        # tüm değişkenleri private tanımlıyoruz
+        # gerekli değişkenler için get/set metotlarını tanımlıyoruz
 
     def get_tc_no(self):
         return self.__tc_no
@@ -20,6 +23,7 @@ class Insan:
     def get_uyruk(self):
         return self.__uyruk
 
+    # bilgileri str metodu ile yazdırıyoruz
     def __str__(self):
         return f"TC no: {self.get_tc_no()}\n" \
                f"Ad: {self.get_ad()}\n" \

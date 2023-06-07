@@ -3,7 +3,9 @@ import Insan
 import Issiz
 import Calisan
 import MaviYaka
-import BeyazYaka
+import BeyazYaka   # pandas kütüphanemizi ve diger py dosyalarımızı import ediyoruz
+
+# oluşturulan tüm instance'ların bilgilerini __str__ metotu ile ekrana yazdırıyoruz
 
 insan1 = Insan.Insan(52695316528, "Salih", "Akcicek", 24, "Erkek", "Turkiye")
 print(insan1.__str__())
@@ -38,6 +40,7 @@ print(beyazyaka2.__str__())
 beyazyaka3 = BeyazYaka.BeyazYaka(81924007632, "Murat", "Boz", 43, "Erkek", "Turkiye", 56, 24500, "insaat", 1500)
 print(beyazyaka3.__str__())
 
+# oluşturaağımız DataFrame için dictionary'ye verileri giriyoruz
 veriler = {"Kategori": ["Calisan", "Calisan", "Calisan", "Mavi yaka", "Mavi yaka", "Mavi yaka", "Beyaz yaka", "Beyaz yaka", "Beyaz yaka"],
         "Tc_no": [calisan1.get_tc_no(), calisan2.get_tc_no(), calisan3.get_tc_no(), maviyaka1.get_tc_no(), maviyaka2.get_tc_no(), maviyaka3.get_tc_no(), beyazyaka1.get_tc_no(), beyazyaka2.get_tc_no(), beyazyaka3.get_tc_no()],
         "Ad": [calisan1.get_ad(), calisan2.get_ad(), calisan3.get_ad(), maviyaka1.get_ad(), maviyaka2.get_ad(), maviyaka3.get_ad(), beyazyaka1.get_ad(), beyazyaka2.get_ad(), beyazyaka3.get_ad()],
@@ -53,7 +56,7 @@ veriler = {"Kategori": ["Calisan", "Calisan", "Calisan", "Mavi yaka", "Mavi yaka
         "Yeni maas": [calisan1.get_yeni_maas(), calisan2.get_yeni_maas(), calisan3.get_yeni_maas(), maviyaka1.get_yeni_maas(), maviyaka2.get_yeni_maas(), maviyaka3.get_yeni_maas(), beyazyaka1.get_yeni_maas(), beyazyaka2.get_yeni_maas(), beyazyaka3.get_yeni_maas()]
         }
 
-df = pd.DataFrame(veriler)
+df = pd.DataFrame(veriler)      # oluşturduğumuz dictionary'yi DataFrame verileri olarak ekliyoruz
 print(df.to_string(), "\n")     # oluşturulan dataframe'in tüm verilerini ekrana yazdırma
 print("---------------------------------------------------\n")
 

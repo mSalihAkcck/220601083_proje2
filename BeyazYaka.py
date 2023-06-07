@@ -6,6 +6,8 @@ class BeyazYaka(Calisan.Calisan):
         Calisan.Calisan.__init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, tecrube, maas, sektor)
         self.__tesvik_primi = tesvik_ptimi
         self.__yeni_maas = None
+        # tüm değişkenleri private tanımlıyoruz
+        # gerekli değişkenler için get/set metotlarını tanımlıyoruz
 
     def get_yeni_maas(self):
         return self.__yeni_maas
@@ -16,7 +18,7 @@ class BeyazYaka(Calisan.Calisan):
     def set_tesvik_primi(self, tesvik_primi):
         self.__tesvik_primi = tesvik_primi
 
-    def zam_hakki(self):
+    def zam_hakki(self):        # zam hakkının hesaplanabilmesi için gerekli matematiksel işlemleri yapıyoruz
         try:
             maas = Calisan.Calisan.get_maas(self)
             tecrube = Calisan.Calisan.get_tecrube(self)
@@ -37,6 +39,7 @@ class BeyazYaka(Calisan.Calisan):
         except Exception:
             print("Bir hata oluştu işlem adımlarını kontrol ediniz.")
 
+    # bilgileri str metodu ile yazdırıyoruz
     def __str__(self):
         BeyazYaka.zam_hakki(self)
         return f"Ad: {Calisan.Calisan.get_ad(self)}\n" \

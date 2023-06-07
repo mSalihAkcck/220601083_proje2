@@ -8,6 +8,8 @@ class Calisan(Insan.Insan):
         self.__maas = maas
         self.__sektor = sektor
         self.__yeni_maas = None
+        # tüm değişkenleri private tanımlıyoruz
+        # gerekli değişkenler için get/set metotlarını tanımlıyoruz
 
     def get_yeni_maas(self):
         return self.__yeni_maas
@@ -22,7 +24,7 @@ class Calisan(Insan.Insan):
     def get_sektor(self):
         return self.__sektor
 
-    def zam_hakki(self):
+    def zam_hakki(self):        # zam hakkının hesaplanabilmesi için gerekli matematiksel işlemleri yapıyoruz
         try:
             while self.__sektor not in ["Teknoloji", "muhasebe", "insaat", "diger"]:
                 print(f"{Insan.Insan.get_ad(self)} çalışanının sektörü hatalı girilmiştir.")
@@ -42,6 +44,7 @@ class Calisan(Insan.Insan):
         except Exception:
             print("Zam hesaplanırken hata oluştu işlem adımlarını kontrol ediniz.")
 
+    # bilgileri str metodu ile yazdırıyoruz
     def __str__(self):
         Calisan.zam_hakki(self)
         return f"Ad: {Insan.Insan.get_ad(self)}\n" \

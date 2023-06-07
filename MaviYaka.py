@@ -6,6 +6,8 @@ class MaviYaka(Calisan.Calisan):
         Calisan.Calisan.__init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk, tecrube, maas, sektor)
         self.__yipranma_payi = yipranma_payi
         self.__yeni_maas = None
+        # tüm değişkenleri private tanımlıyoruz
+        # gerekli değişkenler için get/set metotlarını tanımlıyoruz
 
     def get_yeni_maas(self):
         return self.__yeni_maas
@@ -16,7 +18,7 @@ class MaviYaka(Calisan.Calisan):
     def set_yipranma_payi(self, yipranma_payi):
         self.__yipranma_payi = yipranma_payi
 
-    def zam_hakki(self):
+    def zam_hakki(self):        # zam hakkının hesaplanabilmesi için gerekli matematiksel işlemleri yapıyoruz
         try:
             maas = Calisan.Calisan.get_maas(self)
             tecrube = Calisan.Calisan.get_tecrube(self)
@@ -37,6 +39,7 @@ class MaviYaka(Calisan.Calisan):
         except Exception:
             print("Bir hata oluştu işlem adımlarını kontrol ediniz.")
 
+    # bilgileri str metodu ile yazdırıyoruz
     def __str__(self):
         MaviYaka.zam_hakki(self)
         return f"Ad: {Calisan.Calisan.get_ad(self)}\n" \
