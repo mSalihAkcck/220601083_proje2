@@ -70,5 +70,9 @@ print(sorgu3, "\n")             # yeni mmasa göre kucukten buyuge sıralanmıs 
 print("---------------------------------------------------\n")
 
 sorgu4 = df[(df["Tecrube"] > 3) & (df["Kategori"] == "Beyaz yaka")].to_string()
-print(sorgu4)                   # tecrübesi 3 seneden fazla olan beyaz yakalılar
+print(sorgu4, "\n")                   # tecrübesi 3 seneden fazla olan beyaz yakalılar
+print("---------------------------------------------------\n")
+
+sorgu5 = df[df["Yeni maas"] > 10000].loc[2:5, ["Tc_no", "Yeni maas"]]
+print(sorgu5, "\n")                   # yeni maası 10000 TL üzeri; 2-5 satır arası olanlar
 print("---------------------------------------------------\n")
