@@ -76,3 +76,6 @@ print("---------------------------------------------------\n")
 sorgu5 = df[df["Yeni maas"] > 10000].loc[2:5, ["Tc_no", "Yeni maas"]]
 print(sorgu5, "\n")                   # yeni maası 10000 TL üzeri; 2-5 satır arası olanlar
 print("---------------------------------------------------\n")
+
+yeni_df = pd.DataFrame(df[["Ad", "Soyad", "Sektor", "Yeni maas"]])
+print(yeni_df, "\n")                  # girilen verilerden oluşturulan yeni bir DataFrame
