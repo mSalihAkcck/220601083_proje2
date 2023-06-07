@@ -7,7 +7,12 @@ class Calisan(Insan.Insan):
         self.__tecrube = tecrube
         self.__maas = maas
         self.__sektor = sektor
+        self.__yeni_maas = None
 
+    def get_yeni_maas(self):
+        return self.__yeni_maas
+    def set_yeni_maas(self, yeni_maas):
+        self.__yeni_maas = yeni_maas
     def set_maas(self, maas):
         self.__maas = maas
     def get_maas(self):
@@ -24,15 +29,15 @@ class Calisan(Insan.Insan):
                 break
 
             if self.get_tecrube() < 24:
-                self.set_maas(self.get_maas())
+                self.set_yeni_maas(self.get_maas())
             elif (24 <= self.get_tecrube() <= 48) and self.get_maas() < 15000:
                 zam_orani = self.get_maas() % self.get_tecrube()
                 yeni_maas = int(self.get_maas() + (self.get_maas()*zam_orani/100))
-                self.set_maas(yeni_maas)
+                self.set_yeni_maas(yeni_maas)
             elif self.get_tecrube() > 48 and self.get_maas() < 25000:
                 zam_orani = (self.get_maas() % self.get_tecrube()) / 2
                 yeni_maas = int(self.get_maas() + (self.get_maas()*zam_orani/100))
-                self.set_maas(int(yeni_maas))
+                self.set_yeni_maas(yeni_maas)
 
         except Exception:
             print("Zam hesaplanırken hata oluştu işlem adımlarını kontrol ediniz.")
@@ -42,4 +47,4 @@ class Calisan(Insan.Insan):
         return f"Ad: {Insan.Insan.get_ad(self)}\n" \
                f"Soyad: {Insan.Insan.get_soyad(self)}\n" \
                f"Tecrübe: {self.get_tecrube()} ay\n" \
-               f"Yeni maaş: {self.get_maas()} TL\n"
+               f"Yeni maaş: {self.get_yeni_maas()} TL\n"

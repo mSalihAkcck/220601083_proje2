@@ -50,11 +50,17 @@ veriler = {"Kategori": ["Calisan", "Calisan", "Calisan", "Mavi yaka", "Mavi yaka
         "Maas": [calisan1.get_maas(), calisan2.get_maas(), calisan3.get_maas(), maviyaka1.get_maas(), maviyaka2.get_maas(), maviyaka3.get_maas(), beyazyaka1.get_maas(), beyazyaka2.get_maas(), beyazyaka3.get_maas()],
         "Yipranma payi": [0, 0, 0, maviyaka1.get_yipranma_payi(), maviyaka2.get_yipranma_payi(), maviyaka3.get_yipranma_payi(), 0, 0, 0],
         "Tesvik primi": [0, 0, 0, 0, 0, 0, beyazyaka1.get_tesvik_primi(), beyazyaka2.get_tesvik_primi(), beyazyaka3.get_tesvik_primi()],
-        "Yeni maas": [calisan1.get_maas(), calisan2.get_maas(), calisan3.get_maas(), maviyaka1.get_maas(), maviyaka2.get_maas(), maviyaka3.get_maas(), beyazyaka1.get_maas(), beyazyaka2.get_maas(), beyazyaka3.get_maas()]
+        "Yeni maas": [calisan1.get_yeni_maas(), calisan2.get_yeni_maas(), calisan3.get_yeni_maas(), maviyaka1.get_yeni_maas(), maviyaka2.get_yeni_maas(), maviyaka3.get_yeni_maas(), beyazyaka1.get_yeni_maas(), beyazyaka2.get_yeni_maas(), beyazyaka3.get_yeni_maas()]
         }
 
 df = pd.DataFrame(veriler)
-print(df.to_string(), "\n")
+print(df.to_string(), "\n")     # oluşturulan dataframe'in tüm verilerini ekrana yazdırma
+print("---------------------------------------------------\n")
 
-grup = df.groupby(["Kategori"]).agg({"Yeni maas": "mean", "Tecrube": "mean"})
-print(grup, "\n")             # kategoriye göre gruplandırılmıs yeni maas ve tecrubenin ortalaması
+sorgu1 = df.groupby(["Kategori"]).agg({"Yeni maas": "mean", "Tecrube": "mean"})
+print(sorgu1, "\n")             # kategoriye göre gruplandırılmıs yeni maas ve tecrubenin ortalaması
+print("---------------------------------------------------\n")
+
+sorgu2 = df[df["Maas"] > 15000].count(axis="columns").count()
+print("Maaşı 15000 TL üzeri olanların toplam sayısı: ", sorgu2, "\n")
+print("---------------------------------------------------\n")
