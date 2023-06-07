@@ -64,3 +64,7 @@ print("---------------------------------------------------\n")
 sorgu2 = df[df["Maas"] > 15000].count(axis="columns").count()
 print("Maaşı 15000 TL üzeri olanların toplam sayısı: ", sorgu2, "\n")
 print("---------------------------------------------------\n")
+
+sorgu3 = df.sort_values(by="Yeni maas").to_string()
+print(sorgu3, "\n")             # yeni mmasa göre kucukten buyuge sıralanmıs dataframe
+print("---------------------------------------------------\n")
