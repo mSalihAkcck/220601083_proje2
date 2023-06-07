@@ -68,3 +68,7 @@ print("---------------------------------------------------\n")
 sorgu3 = df.sort_values(by="Yeni maas").to_string()
 print(sorgu3, "\n")             # yeni mmasa göre kucukten buyuge sıralanmıs dataframe
 print("---------------------------------------------------\n")
+
+sorgu4 = df[(df["Tecrube"] > 3) & (df["Kategori"] == "Beyaz yaka")].to_string()
+print(sorgu4)                   # tecrübesi 3 seneden fazla olan beyaz yakalılar
+print("---------------------------------------------------\n")
